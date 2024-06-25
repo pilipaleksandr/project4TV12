@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'book_list' %}">Library</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'book_list' %}">Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'book_add' %}">Add Book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'book_statistics' %}">Statistics</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'book_search' %}">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="q">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

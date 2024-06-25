@@ -1,0 +1,12 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+<h1 class="mt-4">Search Results</h1>
+<ul class="list-group">
+    {% for book in results %}
+    <li class="list-group-item">
+        {{ book.title }} by {{ book.author }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
